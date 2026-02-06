@@ -7,226 +7,148 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 html,body{
-  height:100%;
-  scroll-snap-type:y mandatory;
-  overflow-y:scroll;
   font-family:Segoe UI,Arial,sans-serif;
   background:#f7f9ff;
   color:#111;
+  scroll-behavior:smooth;
 }
 
 /* HEADER */
 header{
   position:fixed;
-  top:0;
-  left:0;
+  top:0;left:0;
   width:100%;
   height:72px;
   padding:0 40px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  background:rgba(255,255,255,0.92);
+  align-items:center;
+  background:rgba(255,255,255,.95);
   backdrop-filter:blur(10px);
   z-index:1000;
 }
-
 .brand{
   font-size:22px;
   font-weight:900;
   letter-spacing:3px;
 }
-
 nav a{
   margin-left:26px;
-  text-decoration:none;
   font-size:14px;
   font-weight:800;
+  text-decoration:none;
   color:#111;
 }
 
-/* SECTIONS */
-section{
-  height:100vh;
-  scroll-snap-align:start;
-  padding:120px 60px 60px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* 🌈 HERO – LIGHT RAINBOW */
+/* HERO */
 .hero{
-  background:linear-gradient(
-    135deg,
-    #ffe9d6,
-    #ffd6e8,
-    #e6ddff,
-    #d6f3ff,
-    #d6ffe8
-  );
-  color:#111;
+  min-height:100vh;
+  padding-top:120px;
+  background:linear-gradient(135deg,#ffe9d6,#ffd6e8,#e6ddff,#d6f3ff,#d6ffe8);
+  display:flex;
   flex-direction:column;
+  align-items:center;
   text-align:center;
 }
-
-/* 🔥 HERO LOGO ANIMATION + BIGGER SIZE */
 .hero-logo img{
-  height:420px;
+  height:360px;
+  max-width:90vw;
   opacity:0;
   animation:
     reveal 1.4s ease forwards,
-    float 3.5s ease-in-out infinite 1.6s,
+    float 4.5s ease-in-out infinite 1.6s,
     glow 3s ease-in-out infinite alternate 1.6s;
-  filter:drop-shadow(0 10px 25px rgba(0,0,0,.25));
+  filter:drop-shadow(0 25px 55px rgba(0,0,0,.35));
 }
-
-/* Load animation */
 @keyframes reveal{
-  from{
-    opacity:0;
-    transform:translateY(40px) scale(.9);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
+  from{opacity:0;transform:translateY(40px) scale(.9)}
+  to{opacity:1;transform:translateY(0) scale(1)}
 }
-
-/* Idle animations */
 @keyframes float{
   0%{transform:translateY(0)}
-  50%{transform:translateY(-16px)}
+  50%{transform:translateY(-18px)}
   100%{transform:translateY(0)}
 }
-
 @keyframes glow{
-  from{filter:drop-shadow(0 10px 25px rgba(0,0,0,.25))}
-  to{filter:drop-shadow(0 20px 45px rgba(0,0,0,.35))}
+  from{filter:drop-shadow(0 25px 55px rgba(0,0,0,.25))}
+  to{filter:drop-shadow(0 35px 75px rgba(0,0,0,.45))}
 }
-
 .hero p{
   font-size:30px;
-  margin-top:26px;
   font-weight:800;
+  margin-top:30px;
 }
-
 .hero .quote{
-  margin-top:22px;
   font-size:36px;
   font-weight:900;
-  letter-spacing:1px;
+  margin-top:20px;
 }
-
-/* HERO BUTTONS */
 .hero-buttons{
-  margin-top:44px;
+  margin-top:40px;
   display:flex;
   gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
 }
-
-.btn-primary{
-  padding:16px 48px;
-  background:#000;
-  color:#fff;
-  text-decoration:none;
-  font-size:18px;
-  font-weight:900;
-  border-radius:50px;
-}
-
-.btn-secondary{
+.btn-primary,.btn-secondary{
   padding:16px 42px;
-  background:rgba(0,0,0,0.08);
+  border-radius:50px;
+  font-weight:900;
+  text-decoration:none;
+}
+.btn-primary{background:#000;color:#fff}
+.btn-secondary{
+  border:2px solid rgba(0,0,0,.2);
   color:#111;
-  text-decoration:none;
-  font-size:16px;
-  font-weight:800;
-  border-radius:50px;
-  border:2px solid rgba(0,0,0,0.15);
 }
 
-/* WORKOUT */
-.row{
-  max-width:1400px;
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:80px;
+/* MINI WORKOUTS */
+.mini-workouts{
+  padding:120px 40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+  background:#fff;
 }
-
-.text h2{
-  font-size:72px;
-  font-weight:900;
-}
-
-.text p{
-  margin-top:24px;
-  font-size:22px;
-  font-weight:600;
-  max-width:620px;
-}
-
-/* VIDEO */
-.video-box video{
-  width:420px;
-  height:420px;
-  object-fit:contain;
+.mini-card{
+  background:#fff;
   border-radius:24px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.15);
-}
-
-/* SUBSCRIBE */
-.subscribe{
-  background:linear-gradient(135deg,#00e5ff,#00ff9c);
-  flex-direction:column;
+  padding:30px;
   text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
-
-.subscribe h2{
-  font-size:82px;
+.mini-card img{
+  height:80px;
+  margin-bottom:20px;
+}
+.mini-card h3{
+  font-size:20px;
   font-weight:900;
 }
-
-.price{
-  font-size:64px;
-  font-weight:900;
-  margin:20px 0;
+.mini-card p{
+  font-size:14px;
+  font-weight:600;
+  color:#555;
+  margin-top:8px;
 }
 
-.subscribe a{
-  margin-top:30px;
-  padding:18px 70px;
-  background:#000;
-  color:#fff;
-  text-decoration:none;
-  font-size:18px;
-  font-weight:900;
-  border-radius:50px;
+/* ANIMATION ON SCROLL */
+.animate{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
 }
-
-/* FOOTER */
-.footer{
-  padding:20px;
-  text-align:center;
-  font-size:12px;
-  color:#666;
+.animate.show{
+  opacity:1;
+  transform:translateY(0);
 }
+.slide-left{transform:translateX(-60px)}
+.slide-right{transform:translateX(60px)}
 
 /* MOBILE */
 @media(max-width:900px){
-  section{padding:110px 24px}
-  .row{flex-direction:column;text-align:center}
-  .hero-logo img{height:200px}
+  .hero-logo img{height:220px}
   .hero p{font-size:22px}
   .hero .quote{font-size:24px}
-  .text h2{font-size:44px}
-  .video-box video{width:300px;height:300px}
 }
 </style>
 </head>
@@ -247,21 +169,54 @@ section{
   <div class="hero-logo">
     <img src="logo.png" alt="Gymix Logo">
   </div>
-
   <p>Train Smart. Get Strong.</p>
   <div class="quote">BUILD A BODY YOU RESPECT</div>
-
   <div class="hero-buttons">
-    <a href="https://rozepay.com/YOUR_AUTOPAY_LINK" target="_blank" class="btn-primary">
-      Subscribe ₹29
-    </a>
-    <a href="#workout1" class="btn-secondary">
-      Explore Workouts ↓
-    </a>
+    <a href="#" class="btn-primary">Subscribe ₹29</a>
+    <a href="#workouts" class="btn-secondary">Explore ↓</a>
   </div>
 </section>
 
+<section class="mini-workouts" id="workouts">
+  <div class="mini-card animate slide-left">
+    <img src="shoulder.png">
+    <h3>STRONG SHOULDERS</h3>
+    <p>Wide shoulders build dominance.</p>
+  </div>
+
+  <div class="mini-card animate">
+    <img src="leg.png">
+    <h3>POWERFUL LEGS</h3>
+    <p>Strength starts from the ground.</p>
+  </div>
+
+  <div class="mini-card animate slide-right">
+    <img src="chest.png">
+    <h3>BUILD CHEST</h3>
+    <p>Strength you can see.</p>
+  </div>
+
+  <div class="mini-card animate slide-left">
+    <img src="run.png">
+    <h3>RUN STRONG</h3>
+    <p>Endurance builds character.</p>
+  </div>
+
+  <div class="mini-card animate slide-right">
+    <img src="rope.png">
+    <h3>ROPE JUMP</h3>
+    <p>Speed. Focus. Fire.</p>
+  </div>
+</section>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add("show");
+  });
+},{threshold:.2});
+document.querySelectorAll(".animate").forEach(el=>observer.observe(el));
+</script>
+
 </body>
 </html>
-
-

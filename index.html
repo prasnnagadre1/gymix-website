@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GYMIX – Build the Body You Respect</title>
+<title>Gymix – Build the Body You Respect</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -62,32 +62,27 @@ section{
 }
 
 .hero-logo img{
-  height:160px;
+  height:180px;
   animation:float 3s ease-in-out infinite;
   filter:drop-shadow(0 0 30px rgba(255,255,255,0.6));
 }
 
-.hero h1{
-  font-size:88px;
-  letter-spacing:6px;
-  margin-top:20px;
-  font-weight:900;
-}
-
 .hero p{
-  font-size:28px;
-  margin-top:10px;
-  font-weight:600;
+  font-size:30px;
+  margin-top:24px;
+  font-weight:700;
 }
 
 .hero .quote{
-  margin-top:28px;
-  font-size:32px;
+  margin-top:24px;
+  font-size:34px;
   font-weight:900;
+  letter-spacing:1px;
 }
 
+/* HERO BUTTONS */
 .hero-buttons{
-  margin-top:40px;
+  margin-top:44px;
   display:flex;
   gap:20px;
   flex-wrap:wrap;
@@ -184,32 +179,6 @@ section{
   border-radius:50px;
 }
 
-/* LEGAL (NO SNAP) */
-.legal-section{
-  scroll-snap-align:none;
-  height:auto;
-  padding:80px 24px;
-  background:#ffffff;
-}
-
-.legal{
-  max-width:900px;
-  margin:auto;
-  font-size:15px;
-  line-height:1.8;
-  color:#333;
-}
-
-.legal h2{
-  font-size:28px;
-  margin-bottom:20px;
-}
-
-.legal h3{
-  font-size:18px;
-  margin-top:30px;
-}
-
 /* FOOTER */
 .footer{
   scroll-snap-align:none;
@@ -230,9 +199,9 @@ section{
 @media(max-width:900px){
   section{padding:110px 24px}
   .row{flex-direction:column;text-align:center}
-  .hero h1{font-size:54px}
-  .hero p{font-size:20px}
-  .hero .quote{font-size:22px}
+  .hero-logo img{height:130px}
+  .hero p{font-size:22px}
+  .hero .quote{font-size:24px}
   .text h2{font-size:44px}
   .video-box{min-width:300px;min-height:300px}
   .video-box video{width:300px;height:300px}
@@ -245,20 +214,21 @@ section{
 <header>
   <img src="assets/images/logo.png" alt="Gymix">
   <nav>
-    <a href="#home">Home</a>
-    <a href="#privacy">Privacy</a>
-    <a href="#terms">Terms</a>
-    <a href="#disclaimer">Disclaimer</a>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="disclaimer.html">Disclaimer</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section id="home" class="hero">
   <div class="hero-logo">
-    <img src="assets/images/logo.png">
+    <img src="assets/images/logo.png" alt="Gymix Logo">
   </div>
-  <h1>GYMIX</h1>
+
   <p>Train Smart. Get Strong.</p>
+
   <div class="quote">BUILD A BODY YOU RESPECT</div>
 
   <div class="hero-buttons">
@@ -277,7 +247,7 @@ section{
     <div class="text">
       <h2>PUSH YOUR LIMITS</h2>
       <p>
-        Learn proper push-up form through clear cartoon animations.
+        Learn proper push-up form with clean cartoon animations.
         Build chest, shoulders and core strength safely.
       </p>
     </div>
@@ -296,7 +266,7 @@ section{
     <div class="text">
       <h2>POWER FROM LEGS</h2>
       <p>
-        Squats form the base of real strength.
+        Squats form the foundation of real strength.
         Train lower body with balance and control.
       </p>
     </div>
@@ -326,72 +296,6 @@ section{
   <a href="https://rozepay.com/YOUR_AUTOPAY_LINK" target="_blank">
     UNLOCK GYMIX
   </a>
-</section>
-
-<!-- PRIVACY -->
-<section id="privacy" class="legal-section">
-  <div class="legal">
-    <h2>Privacy Policy (India)</h2>
-    <p>
-      Gymix respects user privacy in accordance with applicable Indian laws.
-      We collect only essential information required to operate the platform.
-    </p>
-
-    <h3>Information Collected</h3>
-    <p>
-      Basic profile data, device information, and subscription status.
-    </p>
-
-    <h3>Payments</h3>
-    <p>
-      Payments are processed through third-party providers such as Rozepay.
-      Gymix does not store any card, UPI, or banking details.
-    </p>
-
-    <h3>Data Protection</h3>
-    <p>
-      Reasonable security measures are implemented, however no system is
-      completely secure.
-    </p>
-  </div>
-</section>
-
-<!-- TERMS -->
-<section id="terms" class="legal-section">
-  <div class="legal">
-    <h2>Terms & Conditions (India)</h2>
-
-    <h3>Fitness Guidance Only</h3>
-    <p>
-      Gymix provides general fitness guidance and is not a medical service.
-    </p>
-
-    <h3>User Responsibility</h3>
-    <p>
-      Users perform all workouts at their own risk.
-      Gymix is not liable for injuries or outcomes.
-    </p>
-
-    <h3>Governing Law</h3>
-    <p>
-      These terms are governed by the laws of India.
-    </p>
-  </div>
-</section>
-
-<!-- DISCLAIMER -->
-<section id="disclaimer" class="legal-section">
-  <div class="legal">
-    <h2>Disclaimer</h2>
-    <p>
-      Gymix does not provide medical, therapeutic, or professional advice.
-      Always consult a qualified professional before starting any fitness program.
-    </p>
-
-    <p>
-      Founder: <strong>Prasanna Gadre</strong>
-    </p>
-  </div>
 </section>
 
 <div class="footer">

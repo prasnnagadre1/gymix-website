@@ -33,7 +33,11 @@ header{
   z-index:1000;
 }
 
-header img{height:42px}
+.brand{
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:3px;
+}
 
 nav a{
   margin-left:26px;
@@ -61,15 +65,44 @@ section{
   text-align:center;
 }
 
+/* 🔥 HERO LOGO COMBO ANIMATION */
 .hero-logo img{
   height:180px;
-  animation:float 3s ease-in-out infinite;
-  filter:drop-shadow(0 0 30px rgba(255,255,255,0.6));
+  opacity:0;
+  animation:
+    reveal 1.4s ease forwards,
+    float 3.5s ease-in-out infinite 1.6s,
+    glow 3s ease-in-out infinite alternate 1.6s;
+  filter:drop-shadow(0 0 10px rgba(255,255,255,.4));
+}
+
+/* Load animation */
+@keyframes reveal{
+  from{
+    opacity:0;
+    transform:translateY(40px) scale(.9);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* Idle animations */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+  100%{transform:translateY(0)}
+}
+
+@keyframes glow{
+  from{filter:drop-shadow(0 0 15px rgba(255,255,255,.5))}
+  to{filter:drop-shadow(0 0 40px rgba(255,255,255,.9))}
 }
 
 .hero p{
   font-size:30px;
-  margin-top:24px;
+  margin-top:26px;
   font-weight:700;
 }
 
@@ -123,7 +156,6 @@ section{
 .text h2{
   font-size:72px;
   font-weight:900;
-  line-height:1.05;
 }
 
 .text p{
@@ -188,13 +220,6 @@ section{
   color:#666;
 }
 
-/* ANIMATION */
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-14px)}
-  100%{transform:translateY(0)}
-}
-
 /* MOBILE */
 @media(max-width:900px){
   section{padding:110px 24px}
@@ -203,7 +228,6 @@ section{
   .hero p{font-size:22px}
   .hero .quote{font-size:24px}
   .text h2{font-size:44px}
-  .video-box{min-width:300px;min-height:300px}
   .video-box video{width:300px;height:300px}
 }
 </style>
@@ -212,7 +236,7 @@ section{
 <body>
 
 <header>
-  <img src="assets/images/logo.png" alt="Gymix">
+  <div class="brand">GYMIX</div>
   <nav>
     <a href="index.html">Home</a>
     <a href="privacy.html">Privacy</a>
@@ -222,13 +246,12 @@ section{
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero">
+<section class="hero">
   <div class="hero-logo">
-    <img src="assets/images/logo.png" alt="Gymix Logo">
+    <img src="logo.png" alt="Gymix Logo">
   </div>
 
   <p>Train Smart. Get Strong.</p>
-
   <div class="quote">BUILD A BODY YOU RESPECT</div>
 
   <div class="hero-buttons">
@@ -246,45 +269,10 @@ section{
   <div class="row">
     <div class="text">
       <h2>PUSH YOUR LIMITS</h2>
-      <p>
-        Learn proper push-up form with clean cartoon animations.
-        Build chest, shoulders and core strength safely.
-      </p>
+      <p>Learn proper push-up form with clean cartoon animations.</p>
     </div>
     <div class="video-box">
       <video src="assets/videos/pushup.mp4" autoplay loop muted playsinline></video>
-    </div>
-  </div>
-</section>
-
-<!-- WORKOUT 2 -->
-<section>
-  <div class="row">
-    <div class="video-box">
-      <video src="assets/videos/squat.mp4" autoplay loop muted playsinline></video>
-    </div>
-    <div class="text">
-      <h2>POWER FROM LEGS</h2>
-      <p>
-        Squats form the foundation of real strength.
-        Train lower body with balance and control.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- WORKOUT 3 -->
-<section>
-  <div class="row">
-    <div class="text">
-      <h2>BUILD REAL ARMS</h2>
-      <p>
-        Follow guided curl animations to build arms
-        without ego lifting or injury.
-      </p>
-    </div>
-    <div class="video-box">
-      <video src="assets/videos/curl.mp4" autoplay loop muted playsinline></video>
     </div>
   </div>
 </section>
@@ -293,9 +281,7 @@ section{
 <section class="subscribe">
   <h2>ALL THIS.</h2>
   <div class="price">₹29 / MONTH</div>
-  <a href="https://rozepay.com/YOUR_AUTOPAY_LINK" target="_blank">
-    UNLOCK GYMIX
-  </a>
+  <a href="https://rozepay.com/YOUR_AUTOPAY_LINK" target="_blank">UNLOCK GYMIX</a>
 </section>
 
 <div class="footer">

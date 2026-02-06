@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GYMIX – Build the Body You Respect</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{
+  height:100%;
+  scroll-snap-type:y mandatory;
+  overflow-y:scroll;
+  font-family:Segoe UI,Arial,sans-serif;
+  background:#f7f9ff;
+  color:#111;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:72px;
+  padding:0 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+header img{height:42px}
+
+nav a{
+  margin-left:26px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:800;
+  color:#111;
+}
+
+/* SECTIONS */
+section{
+  height:100vh;
+  scroll-snap-align:start;
+  padding:120px 60px 60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#ff6a00,#ff007a,#6a00ff);
+  color:#fff;
+  flex-direction:column;
+  text-align:center;
+}
+
+.hero-logo img{
+  height:160px;
+  animation:float 3s ease-in-out infinite;
+  filter:drop-shadow(0 0 30px rgba(255,255,255,0.6));
+}
+
+.hero h1{
+  font-size:88px;
+  letter-spacing:6px;
+  margin-top:20px;
+  font-weight:900;
+}
+
+.hero p{
+  font-size:28px;
+  margin-top:10px;
+  font-weight:600;
+}
+
+.hero .quote{
+  margin-top:28px;
+  font-size:32px;
+  font-weight:900;
+}
+
+.hero-buttons{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn-primary{
+  padding:16px 48px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:900;
+  border-radius:50px;
+}
+
+.btn-secondary{
+  padding:16px 42px;
+  background:rgba(255,255,255,0.25);
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:800;
+  border-radius:50px;
+  border:2px solid rgba(255,255,255,0.6);
+}
+
+/* WORKOUT */
+.row{
+  max-width:1400px;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:80px;
+}
+
+.text h2{
+  font-size:72px;
+  font-weight:900;
+  line-height:1.05;
+}
+
+.text p{
+  margin-top:24px;
+  font-size:22px;
+  font-weight:600;
+  max-width:620px;
+}
+
+/* VIDEO */
+.video-box{
+  min-width:420px;
+  min-height:420px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.video-box video{
+  width:420px;
+  height:420px;
+  object-fit:contain;
+  border-radius:24px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* SUBSCRIBE */
+.subscribe{
+  background:linear-gradient(135deg,#00e5ff,#00ff9c);
+  flex-direction:column;
+  text-align:center;
+}
+
+.subscribe h2{
+  font-size:82px;
+  font-weight:900;
+}
+
+.price{
+  font-size:64px;
+  font-weight:900;
+  margin:20px 0;
+}
+
+.subscribe a{
+  margin-top:30px;
+  padding:18px 70px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:900;
+  border-radius:50px;
+}
+
+/* LEGAL (NO SNAP) */
+.legal-section{
+  scroll-snap-align:none;
+  height:auto;
+  padding:80px 24px;
+  background:#ffffff;
+}
+
+.legal{
+  max-width:900px;
+  margin:auto;
+  font-size:15px;
+  line-height:1.8;
+  color:#333;
+}
+
+.legal h2{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.legal h3{
+  font-size:18px;
+  margin-top:30px;
+}
+
+/* FOOTER */
+.footer{
+  scroll-snap-align:none;
+  padding:20px;
+  text-align:center;
+  font-size:12px;
+  color:#666;
+}
+
+/* ANIMATION */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+  100%{transform:translateY(0)}
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  section{padding:110px 24px}
+  .row{flex-direction:column;text-align:center}
+  .hero h1{font-size:54px}
+  .hero p{font-size:20px}
+  .hero .quote{font-size:22px}
+  .text h2{font-size:44px}
+  .video-box{min-width:300px;min-height:300px}
+  .video-box video{width:300px;height:300px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="assets/images/logo.png" alt="Gymix">
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#terms">Terms</a>
+    <a href="#disclaimer">Disclaimer</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-logo">
+    <img src="assets/images/logo.png">
+  </div>
+  <h1>GYMIX</h1>
+  <p>Train Smart. Get Strong.</p>
+  <div class="quote">BUILD A BODY YOU RESPECT</div>
+
+  <div class="hero-buttons">
+    <a href="https://rozepay.com/YOUR_AUTOPAY_LINK" target="_blank" class="btn-primary">
+      Subscribe ₹29
+    </a>
+    <a href="#workout1" class="btn-secondary">
+      Explore Workouts ↓
+    </a>
+  </div>
+</section>
+
+<!-- WORKOUT 1 -->
+<section id="workout1">
+  <div class="row">
+    <div class="text">
+      <h2>PUSH YOUR LIMITS</h2>
+      <p>
+        Learn proper push-up form through clear cartoon animations.
+        Build chest, shoulders and core strength safely.
+      </p>
+    </div>
+    <div class="video-box">
+      <video src="assets/videos/pushup.mp4" autoplay loop muted playsinline></video>
+    </div>
+  </div>
+</section>
+
+<!-- WORKOUT 2 -->
+<section>
+  <div class="row">
+    <div class="video-box">
+      <video src="assets/videos/squat.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="text">
+      <h2>POWER FROM LEGS</h2>
+      <p>
+        Squats form the base of real strength.
+        Train lower body with balance and control.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WORKOUT 3 -->
+<section>
+  <div class="row">
+    <div class="text">
+      <h2>BUILD REAL ARMS</h2>
+      <p>
+        Follow guided curl animations to build arms
+        without ego lifting or injury.
+      </p>
+    </div>
+    <div class="video-box">
+      <video src="assets/videos/curl.mp4" autoplay loop muted playsinline></video>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section class="subscribe">
+  <h2>ALL THIS.</h2>
+  <div class="price">₹29 / MONTH</div>
+  <a href="https://rozepay.com/YOUR_AUTOPAY_LINK" target="_blank">
+    UNLOCK GYMIX
+  </a>
+</section>
+
+<!-- PRIVACY -->
+<section id="privacy" class="legal-section">
+  <div class="legal">
+    <h2>Privacy Policy (India)</h2>
+    <p>
+      Gymix respects user privacy in accordance with applicable Indian laws.
+      We collect only essential information required to operate the platform.
+    </p>
+
+    <h3>Information Collected</h3>
+    <p>
+      Basic profile data, device information, and subscription status.
+    </p>
+
+    <h3>Payments</h3>
+    <p>
+      Payments are processed through third-party providers such as Rozepay.
+      Gymix does not store any card, UPI, or banking details.
+    </p>
+
+    <h3>Data Protection</h3>
+    <p>
+      Reasonable security measures are implemented, however no system is
+      completely secure.
+    </p>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section id="terms" class="legal-section">
+  <div class="legal">
+    <h2>Terms & Conditions (India)</h2>
+
+    <h3>Fitness Guidance Only</h3>
+    <p>
+      Gymix provides general fitness guidance and is not a medical service.
+    </p>
+
+    <h3>User Responsibility</h3>
+    <p>
+      Users perform all workouts at their own risk.
+      Gymix is not liable for injuries or outcomes.
+    </p>
+
+    <h3>Governing Law</h3>
+    <p>
+      These terms are governed by the laws of India.
+    </p>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section id="disclaimer" class="legal-section">
+  <div class="legal">
+    <h2>Disclaimer</h2>
+    <p>
+      Gymix does not provide medical, therapeutic, or professional advice.
+      Always consult a qualified professional before starting any fitness program.
+    </p>
+
+    <p>
+      Founder: <strong>Prasanna Gadre</strong>
+    </p>
+  </div>
+</section>
+
+<div class="footer">
+  © 2026 Gymix. All rights reserved.
+</div>
+
+</body>
+</html>

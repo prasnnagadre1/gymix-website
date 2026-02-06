@@ -57,8 +57,7 @@ nav a{
   opacity:0;
   animation:
     reveal 1.4s ease forwards,
-    float 4.5s ease-in-out infinite 1.6s,
-    glow 3s ease-in-out infinite alternate 1.6s;
+    float 4.5s ease-in-out infinite 1.6s;
   filter:drop-shadow(0 25px 55px rgba(0,0,0,.35));
 }
 @keyframes reveal{
@@ -70,19 +69,18 @@ nav a{
   50%{transform:translateY(-18px)}
   100%{transform:translateY(0)}
 }
-@keyframes glow{
-  from{filter:drop-shadow(0 25px 55px rgba(0,0,0,.25))}
-  to{filter:drop-shadow(0 35px 75px rgba(0,0,0,.45))}
-}
 .hero p{
   font-size:30px;
   font-weight:800;
   margin-top:30px;
 }
 .hero .quote{
-  font-size:36px;
+  font-size:38px;
   font-weight:900;
   margin-top:20px;
+  background:linear-gradient(90deg,#ff6a00,#ff007a,#6a00ff);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 .hero-buttons{
   margin-top:40px;
@@ -101,111 +99,147 @@ nav a{
   color:#111;
 }
 
-/* MINI WORKOUTS */
-.mini-workouts{
-  padding:120px 40px;
+/* WHAT GYMIX GIVES */
+.value{
+  padding:140px 40px;
+  text-align:center;
+  background:#ffffff;
+}
+.value h2{
+  font-size:64px;
+  font-weight:900;
+  background:linear-gradient(90deg,#ff6a00,#ff007a,#6a00ff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.value p{
+  max-width:900px;
+  margin:30px auto 80px;
+  font-size:20px;
+  font-weight:700;
+  color:#333;
+}
+
+/* CARDS */
+.cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:40px;
-  background:#fff;
 }
-.mini-card{
-  position:relative;
-  background:#fff;
+.card{
+  background:#ffffff;
   border-radius:26px;
   padding:36px 30px;
   text-align:center;
-  z-index:1;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
 }
-.mini-card::before{
-  content:"";
-  position:absolute;
-  inset:-3px;
-  border-radius:30px;
-  background:linear-gradient(
-    120deg,
-    #ff6a00,
-    #ff007a,
-    #6a00ff,
-    #00e5ff,
-    #00ff9c
-  );
-  filter:blur(18px);
-  opacity:.55;
-  z-index:-1;
-}
-.mini-card img{
+.card img{
   height:80px;
   margin-bottom:20px;
 }
-.mini-card h3{
+.card h3{
   font-size:20px;
   font-weight:900;
 }
-.mini-card p{
+.card p{
   font-size:14px;
   font-weight:600;
   color:#555;
   margin-top:8px;
 }
 
-/* WHY ₹29 */
-.why29{
+/* WHY 29 */
+.why{
   padding:140px 40px;
-  text-align:center;
   background:#f7f9ff;
+  text-align:center;
 }
-.why29 h2{
+.why h2{
   font-size:64px;
   font-weight:900;
 }
-.why29 h2 span{
+.why h2 span{
   background:linear-gradient(90deg,#ff6a00,#ff007a,#6a00ff);
   -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  color:transparent;
 }
 .why-grid{
   max-width:1100px;
-  margin:70px auto 0;
+  margin:80px auto 0;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:50px;
 }
-.why-card{
-  background:#fff;
+.why-box{
+  background:#ffffff;
   padding:40px 30px;
   border-radius:26px;
   box-shadow:0 20px 50px rgba(0,0,0,.08);
 }
-.why-card h3{
+.why-box h3{
   font-size:22px;
   font-weight:900;
 }
-.why-card p{
+.why-box p{
   margin-top:14px;
   font-size:15px;
   font-weight:600;
   color:#555;
-  line-height:1.6;
-}
-.why-quote{
-  margin-top:80px;
-  font-size:26px;
-  font-weight:900;
-  background:linear-gradient(90deg,#00e5ff,#00ff9c);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
 }
 
-/* SCROLL ANIM */
-.animate{opacity:0;transform:translateY(40px);transition:.8s ease}
-.animate.show{opacity:1;transform:translateY(0)}
+/* COMPARE */
+.compare{
+  padding:140px 40px;
+  background:#ffffff;
+  text-align:center;
+}
+.compare h2{
+  font-size:64px;
+  font-weight:900;
+}
+.compare h2 span{
+  background:linear-gradient(90deg,#ff6a00,#ff007a,#6a00ff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.compare-grid{
+  max-width:1000px;
+  margin:80px auto 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+.compare-card{
+  background:#f9fafc;
+  border-radius:28px;
+  padding:50px 40px;
+  text-align:left;
+  box-shadow:0 20px 45px rgba(0,0,0,.08);
+}
+.compare-card h3{
+  font-size:28px;
+  font-weight:900;
+  margin-bottom:24px;
+}
+.compare-card ul{
+  list-style:none;
+  padding:0;
+}
+.compare-card li{
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:14px;
+}
+.compare-card.gymix h3{color:#00c853}
+.compare-card.gym h3{color:#e53935}
 
 /* MOBILE */
 @media(max-width:900px){
   .hero-logo img{height:220px}
   .hero p{font-size:22px}
-  .hero .quote{font-size:24px}
+  .hero .quote{font-size:26px}
+  .value h2,.why h2,.compare h2{font-size:42px}
+  .compare-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -230,65 +264,58 @@ nav a{
   <div class="quote">BUILD A BODY YOU RESPECT</div>
   <div class="hero-buttons">
     <a href="#" class="btn-primary">Subscribe ₹29</a>
-    <a href="#workouts" class="btn-secondary">Explore ↓</a>
+    <a href="#value" class="btn-secondary">Scroll ↓</a>
   </div>
 </section>
 
-<section class="mini-workouts" id="workouts">
-  <div class="mini-card animate">
-    <img src="shoulder.png">
-    <h3>STRONG SHOULDERS</h3>
-    <p>Wide shoulders build dominance.</p>
-  </div>
-  <div class="mini-card animate">
-    <img src="leg.png">
-    <h3>POWERFUL LEGS</h3>
-    <p>Strength starts from the ground.</p>
-  </div>
-  <div class="mini-card animate">
-    <img src="chest.png">
-    <h3>BUILD CHEST</h3>
-    <p>Strength you can see.</p>
-  </div>
-  <div class="mini-card animate">
-    <img src="run.png">
-    <h3>RUN STRONG</h3>
-    <p>Endurance builds character.</p>
-  </div>
-  <div class="mini-card animate">
-    <img src="rope.png">
-    <h3>ROPE JUMP</h3>
-    <p>Speed. Focus. Fire.</p>
+<section class="value" id="value">
+  <h2>What Gymix Gives You</h2>
+  <p>
+    Simple, animated workouts designed to build real strength.
+    No confusion. No pressure. Just consistency.
+  </p>
+
+  <div class="cards">
+    <div class="card"><img src="shoulder.png"><h3>Strong Shoulders</h3><p>Posture. Power. Presence.</p></div>
+    <div class="card"><img src="leg.png"><h3>Powerful Legs</h3><p>Strength starts from the ground.</p></div>
+    <div class="card"><img src="chest.png"><h3>Built Chest</h3><p>Strength you can see.</p></div>
+    <div class="card"><img src="run.png"><h3>Endurance</h3><p>Consistency beats motivation.</p></div>
+    <div class="card"><img src="rope.png"><h3>Fat Burn</h3><p>Speed. Focus. Fire.</p></div>
   </div>
 </section>
 
-<section class="why29">
+<section class="why">
   <h2>WHY ONLY <span>₹29</span> ?</h2>
   <div class="why-grid">
-    <div class="why-card animate">
-      <h3>No Trainer Fees</h3>
-      <p>Pay for workouts, not expensive trainers.</p>
-    </div>
-    <div class="why-card animate">
-      <h3>No Gimmicks</h3>
-      <p>No ads. No influencers. Just results.</p>
-    </div>
-    <div class="why-card animate">
-      <h3>India First</h3>
-      <p>Fitness should be affordable for everyone.</p>
-    </div>
+    <div class="why-box"><h3>No Trainer Fees</h3><p>You pay for workouts, not trainers.</p></div>
+    <div class="why-box"><h3>No Gimmicks</h3><p>No ads. No influencers. Just results.</p></div>
+    <div class="why-box"><h3>India First</h3><p>Affordable fitness for everyone.</p></div>
   </div>
-  <div class="why-quote animate">Strong body shouldn’t need a heavy wallet.</div>
 </section>
 
-<script>
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting)e.target.classList.add("show");
-  });
-},{threshold:.2});
-document.querySelectorAll(".animate").forEach(el=>observer.observe(el));
-</script>
+<section class="compare">
+  <h2>₹29 <span>vs</span> ₹1000 Gym</h2>
+  <div class="compare-grid">
+    <div class="compare-card gymix">
+      <h3>GYMIX ₹29</h3>
+      <ul>
+        <li>✔ Home + Gym workouts</li>
+        <li>✔ Animated guidance</li>
+        <li>✔ No travel</li>
+        <li>✔ Cancel anytime</li>
+      </ul>
+    </div>
+    <div class="compare-card gym">
+      <h3>Local Gym ₹1000+</h3>
+      <ul>
+        <li>✖ Travel time</li>
+        <li>✖ Crowded space</li>
+        <li>✖ Trainer upsell</li>
+        <li>✖ Fixed timings</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>

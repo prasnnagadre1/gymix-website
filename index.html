@@ -57,23 +57,30 @@ section{
   justify-content:center;
 }
 
-/* HERO */
+/* 🌈 HERO – LIGHT RAINBOW */
 .hero{
-  background:linear-gradient(135deg,#ff6a00,#ff007a,#6a00ff);
-  color:#fff;
+  background:linear-gradient(
+    135deg,
+    #ffe9d6,
+    #ffd6e8,
+    #e6ddff,
+    #d6f3ff,
+    #d6ffe8
+  );
+  color:#111;
   flex-direction:column;
   text-align:center;
 }
 
-/* 🔥 HERO LOGO COMBO ANIMATION */
+/* 🔥 HERO LOGO ANIMATION + BIGGER SIZE */
 .hero-logo img{
-  height:180px;
+  height:240px;
   opacity:0;
   animation:
     reveal 1.4s ease forwards,
     float 3.5s ease-in-out infinite 1.6s,
     glow 3s ease-in-out infinite alternate 1.6s;
-  filter:drop-shadow(0 0 10px rgba(255,255,255,.4));
+  filter:drop-shadow(0 10px 25px rgba(0,0,0,.25));
 }
 
 /* Load animation */
@@ -91,24 +98,24 @@ section{
 /* Idle animations */
 @keyframes float{
   0%{transform:translateY(0)}
-  50%{transform:translateY(-14px)}
+  50%{transform:translateY(-16px)}
   100%{transform:translateY(0)}
 }
 
 @keyframes glow{
-  from{filter:drop-shadow(0 0 15px rgba(255,255,255,.5))}
-  to{filter:drop-shadow(0 0 40px rgba(255,255,255,.9))}
+  from{filter:drop-shadow(0 10px 25px rgba(0,0,0,.25))}
+  to{filter:drop-shadow(0 20px 45px rgba(0,0,0,.35))}
 }
 
 .hero p{
   font-size:30px;
   margin-top:26px;
-  font-weight:700;
+  font-weight:800;
 }
 
 .hero .quote{
-  margin-top:24px;
-  font-size:34px;
+  margin-top:22px;
+  font-size:36px;
   font-weight:900;
   letter-spacing:1px;
 }
@@ -134,13 +141,13 @@ section{
 
 .btn-secondary{
   padding:16px 42px;
-  background:rgba(255,255,255,0.25);
-  color:#fff;
+  background:rgba(0,0,0,0.08);
+  color:#111;
   text-decoration:none;
   font-size:16px;
   font-weight:800;
   border-radius:50px;
-  border:2px solid rgba(255,255,255,0.6);
+  border:2px solid rgba(0,0,0,0.15);
 }
 
 /* WORKOUT */
@@ -166,14 +173,6 @@ section{
 }
 
 /* VIDEO */
-.video-box{
-  min-width:420px;
-  min-height:420px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
 .video-box video{
   width:420px;
   height:420px;
@@ -213,7 +212,6 @@ section{
 
 /* FOOTER */
 .footer{
-  scroll-snap-align:none;
   padding:20px;
   text-align:center;
   font-size:12px;
@@ -224,7 +222,7 @@ section{
 @media(max-width:900px){
   section{padding:110px 24px}
   .row{flex-direction:column;text-align:center}
-  .hero-logo img{height:130px}
+  .hero-logo img{height:160px}
   .hero p{font-size:22px}
   .hero .quote{font-size:24px}
   .text h2{font-size:44px}
@@ -245,7 +243,6 @@ section{
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-logo">
     <img src="logo.png" alt="Gymix Logo">
@@ -263,30 +260,6 @@ section{
     </a>
   </div>
 </section>
-
-<!-- WORKOUT 1 -->
-<section id="workout1">
-  <div class="row">
-    <div class="text">
-      <h2>PUSH YOUR LIMITS</h2>
-      <p>Learn proper push-up form with clean cartoon animations.</p>
-    </div>
-    <div class="video-box">
-      <video src="assets/videos/pushup.mp4" autoplay loop muted playsinline></video>
-    </div>
-  </div>
-</section>
-
-<!-- SUBSCRIBE -->
-<section class="subscribe">
-  <h2>ALL THIS.</h2>
-  <div class="price">₹29 / MONTH</div>
-  <a href="https://rozepay.com/YOUR_AUTOPAY_LINK" target="_blank">UNLOCK GYMIX</a>
-</section>
-
-<div class="footer">
-  © 2026 Gymix. All rights reserved.
-</div>
 
 </body>
 </html>
